@@ -1,0 +1,23 @@
+# Local AI-assistant architecture notes are not part of repository commits.
+CLAUDE.md
+claude.md
+**/CLAUDE.md
+**/claude.md
+
+# Python and uv generated files
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
