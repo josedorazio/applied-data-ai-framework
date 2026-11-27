@@ -4,7 +4,7 @@ claude.md
 **/CLAUDE.md
 **/claude.md
 
-# Python and uv generated files
+# Python, uv, and downloaded source data
 .venv/
 __pycache__/
 *.py[cod]
@@ -16,6 +16,8 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+.cache/
+.data/
 
 # Local environment and secrets
 .env

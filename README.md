@@ -1,9 +1,11 @@
-# Applied Data AI Framework
+# Applied Data & AI Projects
 
-This repository is a portfolio of practical data and AI projects. It currently contains a starter project for business intelligence and workflow automation aimed at small and medium businesses.
+Practical solutions to common business problems: data integration, reporting automation and applied AI for small and medium-sized businesses.
 
-## Project
+Each project starts from a real business problem and is built with tests, documentation and clear limits. All data is public or synthetic.
 
-- [SMB Business Intelligence & Automation](<SMB Business Intelligence & Automation/README.md>) — project overview, setup instructions, and development commands.
+## Projects
 
-Each project lives in its own folder and includes its own README.
+| Project | Business problem | Status |
+|---|---|---|
+| [**BizPilot**](bizpilot/README.md) | Sales data scattered across spreadsheets and systems; reporting is manual and inconsistent | 🚧 In development |
