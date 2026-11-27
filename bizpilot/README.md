@@ -1,26 +1,30 @@
-# BizPilot — Business Intelligence & Reporting Automation for SMBs
+# BizPilot — Data Integration & Reporting Automation for Small Online Shops
 
-BizPilot turns scattered sales data into one reliable, tested source of truth, with clear KPIs, a dashboard and automated reporting.
+BizPilot connects a small online shop's Shopify orders, Stripe payments and Google Sheets costs into one tested database, then reports sales, margin and reconciliation automatically.
 
 > **Status:** in development.
 
 ## The problem
 
-Small and medium-sized businesses often keep their sales in spreadsheets and exports from different systems. As a result:
+> "Every Monday I export orders from Shopify, payments from Stripe and copy my product costs from a spreadsheet, then spend a few hours pasting it all together. I never know my real margin, and sometimes the numbers don't match and I don't know why."
 
-- someone consolidates the data by hand every week or month;
-- the same KPI is calculated differently in different reports;
-- basic questions ("which products and customers drive revenue?") take days to answer;
-- duplicates, cancellations and missing values quietly distort the numbers.
+That owner's week, in short:
+
+- data lives in three or four tools, and someone consolidates it by hand;
+- real margin is unknown because costs sit in a separate spreadsheet;
+- orders and payments don't always match (missing payments, refunds recorded in only one place);
+- the same KPI is calculated differently in different reports.
 
 ## What BizPilot will do
 
-1. **Connect** to transaction data from public datasets and client CSV/Excel files.
-2. **Validate** schema, types, duplicates and cancellations.
+1. **Connect** to Shopify, Stripe, Google Sheets and CSV/Excel exports.
+2. **Validate** schema, types and duplicates; keep rejected rows with their reason.
 3. **Store** raw and curated data in PostgreSQL.
-4. **Model** analytics-ready tables with documented metric definitions.
-5. **Report** through a dashboard and scheduled business reports.
+4. **Model** sales, margin and order ↔ payment reconciliation with documented metric definitions.
+5. **Report** through a shareable dashboard and an automated weekly report.
 
 ## Data
 
-Public data only: [UCI Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii), real transactions from a UK online retailer, 2009–2011. Chen, D. (2012), UCI Machine Learning Repository, https://doi.org/10.24432/C5CG6D, licensed CC BY 4.0.
+All data is **synthetic** and belongs to a fictional demo shop: a Shopify development store, Stripe in test mode and a Google Sheet. No real customers or payments.
+
+The shop's products and order patterns are seeded from [UCI Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii), real transactions from a UK online retailer, 2009–2011. Chen, D. (2012), UCI Machine Learning Repository, https://doi.org/10.24432/C5CG6D, licensed CC BY 4.0.
