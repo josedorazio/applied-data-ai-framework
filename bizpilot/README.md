@@ -1,31 +1,33 @@
-# BizPilot — Data Integration & Reporting Automation for Small Online Shops
+# BizPilot — Data Integration & Reporting Automation for Online Sellers
 
-BizPilot connects a small online shop's Shopify orders, Stripe payments and Google Sheets costs into one tested database, then reports sales, margin and reconciliation automatically.
+BizPilot turns an online seller's weekly exports (orders, payments) and cost list into one tested database, then reports sales, margin and payment reconciliation automatically.
 
 > **Status:** in development.
 
 ## The problem
 
-> "Every Monday I export orders from Shopify, payments from Stripe and copy my product costs from a spreadsheet, then spend a few hours pasting it all together. I never know my real margin, and sometimes the numbers don't match and I don't know why."
+> "Every Monday I download my orders and payments exports from the marketplace and paste them into a spreadsheet next to my product costs. It takes hours, I never know my real margin, and sometimes what I sold and what I got paid don't match and I don't know why."
 
 That owner's week, in short:
 
-- data lives in three or four tools, and someone consolidates it by hand;
-- real margin is unknown because costs sit in a separate spreadsheet;
-- orders and payments don't always match (missing payments, refunds recorded in only one place);
+- data arrives as separate exports, and someone consolidates it by hand;
+- real margin is unknown because costs sit in a separate file;
+- orders and payments don't always match (missing payments, several payments per order, canceled orders);
 - the same KPI is calculated differently in different reports.
 
 ## What BizPilot will do
 
-1. **Connect** to Shopify, Stripe, Google Sheets and CSV/Excel exports.
-2. **Validate** schema, types and duplicates; keep rejected rows with their reason.
-3. **Store** raw and curated data in PostgreSQL.
-4. **Model** sales, margin and order ↔ payment reconciliation with documented metric definitions.
-5. **Report** through a shareable dashboard and an automated weekly report.
+1. **Ingest** CSV exports through a connector, processing only new files.
+2. **Store** them as received (Bronze), then validated and normalized (Silver), keeping rejected rows with their reason.
+3. **Model** sales, margin and order ↔ payment reconciliation with documented metric definitions (Gold).
+4. **Report** through a shareable dashboard and an automated weekly report.
+5. **Later:** add a second source (for example Google Sheets, Stripe or Shopify) into the same model.
+
+Every tool used is free.
 
 ## Data
 
-The demo shop runs on real, anonymized public data: the order and payment history of one seller from the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (2016–2018, BRL). That history is replayed into a Shopify development store and a Stripe sandbox, so BizPilot reads it through the same APIs a real shop would use. No real money moves.
+Real, anonymized public data: the orders and payments of one seller from the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (2016–2018, BRL), used as that seller's exports.
 
 - Product costs and monthly targets are **assumptions**, labeled as such, because the dataset has no costs.
 - The dataset is not stored in this repository; it is downloaded when needed. Credit: Olist. Licence: see the dataset page.
