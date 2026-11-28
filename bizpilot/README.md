@@ -25,6 +25,7 @@ That owner's week, in short:
 
 ## Data
 
-All data is **synthetic** and belongs to a fictional demo shop: a Shopify development store, Stripe in test mode and a Google Sheet. No real customers or payments.
+The demo shop runs on real, anonymized public data: the order and payment history of one seller from the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (2016–2018, BRL). That history is replayed into a Shopify development store and a Stripe sandbox, so BizPilot reads it through the same APIs a real shop would use. No real money moves.
 
-The shop's products and order patterns are seeded from [UCI Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii), real transactions from a UK online retailer, 2009–2011. Chen, D. (2012), UCI Machine Learning Repository, https://doi.org/10.24432/C5CG6D, licensed CC BY 4.0.
+- Product costs and monthly targets are **assumptions**, labeled as such, because the dataset has no costs.
+- The dataset is not stored in this repository; it is downloaded when needed. Credit: Olist. Licence: see the dataset page.
